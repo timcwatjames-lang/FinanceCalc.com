@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affordability Calculator — Free Home Buying Budget Tool</title>
+  <meta name="description" content="Free home affordability calculator: find out how much house you can afford based on your income, debts, and down payment.">
+  <meta property="og:title" content="Affordability Calculator — Free Home Buying Budget Tool">
+  <meta property="og:description" content="Free home affordability calculator: find out how much house you can afford based on your income, debts, and down payment.">
+  <meta property="og:url" content="https://timcwatjames-lang.github.io/FinanceCalc.com/affordability-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://timcwatjames-lang.github.io/FinanceCalc.com/icon-512.svg">
+  <link rel="canonical" href="https://timcwatjames-lang.github.io/FinanceCalc.com/affordability-calculator.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Affordability Calculator",
+    "description": "Free home affordability calculator: find out how much house you can afford based on your income, debts, and down payment.",
+    "applicationCategory": "FinanceApplication",
+    "url": "https://timcwatjames-lang.github.io/FinanceCalc.com/affordability-calculator.html"
+  }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862355594319303" crossorigin="anonymous"></script>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="logo">Finance<span>Calc</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="./">Calculators</a></li>
+        </ul>
+      </nav>
+      <button class="install-btn" id="install-btn" onclick="installApp()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Install
+      </button>
+    </div>
+  </header>
+
+  <main class="calc-page">
+    <div class="container">
+      <p class="breadcrumb"><a href="./">Home</a> / Affordability Calculator</p>
+      <h1>Affordability Calculator</h1>
+      <p class="subtitle">Find out how much home you can afford based on your income, existing debts, and down payment.</p>
+
+      <div class="calc-layout">
+        <div class="calc-form">
+          <div class="form-group">
+            <label for="afford-income">Annual Gross Income</label>
+            <div class="input-wrapper">
+              <span class="prefix">$</span>
+              <input type="number" id="afford-income" value="95000" min="0" step="1000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="afford-debt">Monthly Debt Payments</label>
+            <div class="input-wrapper">
+              <span class="prefix">$</span>
+              <input type="number" id="afford-debt" value="400" min="0" step="50">
+            </div>
+            <p class="hint">Car loans, student loans, credit cards, etc.</p>
+          </div>
+          <div class="form-group">
+            <label for="afford-down">Down Payment</label>
+            <div class="input-wrapper">
+              <span class="prefix">$</span>
+              <input type="number" id="afford-down" value="40000" min="0" step="1000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="afford-rate">Annual Interest Rate</label>
+            <div class="input-wrapper">
+              <span class="prefix">%</span>
+              <input type="number" id="afford-rate" value="6.875" min="0" step="0.125">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="afford-term">Loan Term (years)</label>
+            <div class="input-wrapper">
+              <input type="number" id="afford-term" value="30" min="1" max="40" step="1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="afford-tax">Annual Property Tax (estimate)</label>
+            <div class="input-wrapper">
+              <span class="prefix">$</span>
+              <input type="number" id="afford-tax" value="3000" min="0" step="100">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="afford-insurance">Annual Home Insurance (estimate)</label>
+            <div class="input-wrapper">
+              <span class="prefix">$</span>
+              <input type="number" id="afford-insurance" value="1000" min="0" step="50">
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="calcAfford()">Calculate</button>
+        </div>
+
+        <div class="calc-results" id="afford-results">
+          <h3>Results</h3>
+          <p style="color: var(--gray-500); font-size: 14px;">Enter your numbers and click Calculate.</p>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2>How to Use This Affordability Calculator</h2>
+        <p>Enter your annual income, monthly debt payments, down payment, and expected interest rate. The calculator uses standard front-end (28%) and back-end (36%) debt-to-income ratios to determine your maximum home price.</p>
+        <h3>Understanding the Ratios</h3>
+        <ul>
+          <li><strong>Front-End Ratio (28%)</strong> — your total housing payment should not exceed 28% of gross monthly income</li>
+          <li><strong>Back-End Ratio (36%)</strong> — your total debt payments including housing should not exceed 36% of gross monthly income</li>
+        </ul>
+        <p>These are general guidelines. Actual approval depends on your credit score, lender requirements, and local market conditions.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p>&copy; 2026 FinanceCalc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="consent.js"></script>
+</body>
+</html>
